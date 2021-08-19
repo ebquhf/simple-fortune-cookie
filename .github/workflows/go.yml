@@ -1,0 +1,29 @@
+name: Go
+
+on:
+  push:
+    branches: [ main ]
+jobs:
+  Clone-down:
+    name: Clone-down repo
+    runs-on: go:1.16
+    steps:
+      - name: Clone
+        run: git clone https://github.com/ebquhf/simple-fortune-cookie.git
+      - name: Upload repo
+        uses: actions/upload-artifact@v2
+        with:
+          name: code
+          path: .
+  Test:
+    runs-on: go:1.16
+    needs: Clone-down
+    steps:
+    - name: Download code
+      uses: actions/download-artifact@v2
+      with:
+        name: code
+        path: .
+    - name: Unit test
+      run: go test
+  
