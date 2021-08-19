@@ -1,0 +1,10 @@
+version: "1.0"
+services:
+  backend:
+    image: "cookie_backend" .
+    ports:
+      - "9000:9000"
+  frontend:
+    image: "cookie_frontend"
+    ports:
+        - "8080:8080"
