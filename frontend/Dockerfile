@@ -1,18 +1,10 @@
 FROM golang:1.16
 
 WORKDIR /go/src/app
-COPY backend /go/src/app
-COPY frontend /go/src/app
-COPY images /go/src/app
+COPY . /go/src/app
 
-ENV GOBIN /go/bin
+COPY *.go ./
 
-
-RUN go get -v github.com/gomodule/redigo
-
-
+RUN go build
 EXPOSE 8080
-RUN go build 
-RUN go run backend
-RUN go run frontend
 CMD ["./frontend"]
