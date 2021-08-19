@@ -36,7 +36,7 @@ jobs:
         name: code
         path: .
     - name: Docker compose
-      run: cd simple-fortune-cookie && docker-compose up -d && curl 104.155.17.115:8080 
+      run: cd simple-fortune-cookie && docker-compose up -d && curl localhost:8080 
   Functional-Test:
     runs-on: ubuntu-latest
     needs: Compose
@@ -47,5 +47,5 @@ jobs:
         name: code
         path: .
     - name: curl ip
-      run: curl 104.155.17.115:8080 
+      run: curl localhost:8080 
 
