@@ -36,4 +36,4 @@ jobs:
         name: code
         path: .
     - name: Docker compose
-      run: cd simple-fortune-cookie && docker-compose up
+      run: cd simple-fortune-cookie && docker-compose up -d
