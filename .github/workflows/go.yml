@@ -25,5 +25,5 @@ jobs:
         name: code
         path: .
     - name: Unit test
-      run: cd ./frontend && go test
+      run: cd simple-fortune-cookie/frontend && go test
   
