@@ -37,7 +37,7 @@ jobs:
         path: .
     - name: Docker compose
       run: cd simple-fortune-cookie && docker-compose up -d
-  Functional Test:
+  Functional-Test:
     runs-on: ubuntu-latest
     needs: Compose
     steps:
