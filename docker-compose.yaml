@@ -1,10 +1,10 @@
-version: "1.0"
+version: "3.3"
 services:
   backend:
-    image: "cookie_backend" .
+    build: "./backend"
     ports:
       - "9000:9000"
   frontend:
-    image: "cookie_frontend"
+    build: "./frontend"
     ports:
         - "8080:8080"
